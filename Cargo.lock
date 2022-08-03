@@ -3470,7 +3470,7 @@ dependencies = [
  "libp2p-swarm",
  "log",
  "prost 0.9.0",
- "prost-build",
+ "prost-build 0.9.0",
  "rand 0.8.4",
 ]
 
@@ -3497,7 +3497,7 @@ dependencies = [
  "parking_lot 0.12.0",
  "pin-project 1.0.10",
  "prost 0.9.0",
- "prost-build",
+ "prost-build 0.9.0",
  "rand 0.8.4",
  "ring",
  "rw-stream-sink",
@@ -3547,7 +3547,7 @@ dependencies = [
  "libp2p-swarm",
  "log",
  "prost 0.9.0",
- "prost-build",
+ "prost-build 0.9.0",
  "rand 0.7.3",
  "smallvec",
 ]
@@ -3571,7 +3571,7 @@ dependencies = [
  "log",
  "prometheus-client",
  "prost 0.9.0",
- "prost-build",
+ "prost-build 0.9.0",
  "rand 0.7.3",
  "regex",
  "sha2 0.10.2",
@@ -3593,7 +3593,7 @@ dependencies = [
  "log",
  "lru",
  "prost 0.9.0",
- "prost-build",
+ "prost-build 0.9.0",
  "smallvec",
 ]
 
@@ -3615,7 +3615,7 @@ dependencies = [
  "libp2p-swarm",
  "log",
  "prost 0.9.0",
- "prost-build",
+ "prost-build 0.9.0",
  "rand 0.7.3",
  "sha2 0.10.2",
  "smallvec",
@@ -3693,7 +3693,7 @@ dependencies = [
  "libp2p-core",
  "log",
  "prost 0.9.0",
- "prost-build",
+ "prost-build 0.9.0",
  "rand 0.8.4",
  "sha2 0.10.2",
  "snow",
@@ -3730,7 +3730,7 @@ dependencies = [
  "libp2p-core",
  "log",
  "prost 0.9.0",
- "prost-build",
+ "prost-build 0.9.0",
  "unsigned-varint",
  "void",
 ]
@@ -3766,7 +3766,7 @@ dependencies = [
  "log",
  "pin-project 1.0.10",
  "prost 0.9.0",
- "prost-build",
+ "prost-build 0.9.0",
  "rand 0.8.4",
  "smallvec",
  "static_assertions",
@@ -3790,7 +3790,7 @@ dependencies = [
  "libp2p-swarm",
  "log",
  "prost 0.9.0",
- "prost-build",
+ "prost-build 0.9.0",
  "rand 0.8.4",
  "sha2 0.10.2",
  "thiserror",
@@ -6993,6 +6993,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "prost"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "399c3c31cdec40583bb68f0b18403400d01ec4289c383aa047560439952c4dd7"
+dependencies = [
+ "bytes",
+ "prost-derive 0.11.0",
+]
+
+[[package]]
 name = "prost-build"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -7006,7 +7016,27 @@ dependencies = [
  "multimap",
  "petgraph",
  "prost 0.9.0",
- "prost-types",
+ "prost-types 0.9.0",
+ "regex",
+ "tempfile",
+ "which",
+]
+
+[[package]]
+name = "prost-build"
+version = "0.11.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7f835c582e6bd972ba8347313300219fed5bfa52caf175298d860b61ff6069bb"
+dependencies = [
+ "bytes",
+ "heck 0.4.0",
+ "itertools",
+ "lazy_static",
+ "log",
+ "multimap",
+ "petgraph",
+ "prost 0.11.0",
+ "prost-types 0.11.1",
  "regex",
  "tempfile",
  "which",
@@ -7039,6 +7069,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "prost-derive"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7345d5f0e08c0536d7ac7229952590239e77abf0a0100a1b1d890add6ea96364"
+dependencies = [
+ "anyhow",
+ "itertools",
+ "proc-macro2",
+ "quote",
+ "syn",
+]
+
+[[package]]
 name = "prost-types"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -7046,6 +7089,16 @@ checksum = "534b7a0e836e3c482d2693070f982e39e7611da9695d4d1f5a4b186b51faef0a"
 dependencies = [
  "bytes",
  "prost 0.9.0",
+]
+
+[[package]]
+name = "prost-types"
+version = "0.11.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4dfaa718ad76a44b3415e6c4d53b17c8f99160dcb3a99b10470fce8ad43f6e3e"
+dependencies = [
+ "bytes",
+ "prost 0.11.0",
 ]
 
 [[package]]
@@ -7786,7 +7839,7 @@ dependencies = [
  "log",
  "parity-scale-codec",
  "prost 0.10.3",
- "prost-build",
+ "prost-build 0.11.1",
  "quickcheck",
  "rand 0.7.3",
  "sc-client-api",
@@ -8438,7 +8491,7 @@ dependencies = [
  "parking_lot 0.12.0",
  "pin-project 1.0.10",
  "prost 0.10.3",
- "prost-build",
+ "prost-build 0.11.1",
  "rand 0.7.3",
  "sc-block-builder",
  "sc-client-api",
@@ -8476,7 +8529,7 @@ dependencies = [
  "futures",
  "libp2p",
  "parity-scale-codec",
- "prost-build",
+ "prost-build 0.11.1",
  "sc-peerset",
  "smallvec",
 ]
@@ -8509,7 +8562,7 @@ dependencies = [
  "log",
  "parity-scale-codec",
  "prost 0.10.3",
- "prost-build",
+ "prost-build 0.11.1",
  "sc-client-api",
  "sc-network-common",
  "sc-peerset",
@@ -8532,7 +8585,7 @@ dependencies = [
  "lru",
  "parity-scale-codec",
  "prost 0.10.3",
- "prost-build",
+ "prost-build 0.11.1",
  "quickcheck",
  "sc-block-builder",
  "sc-client-api",
